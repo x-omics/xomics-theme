@@ -1,0 +1,81 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from django.core.urlresolvers import reverse %>
+<%namespace name='static' file='/static_content.html'/>
+
+<%inherit file="/main.html" />
+
+<%block name="title"><title>${_("FAQ")}</title></%block>
+
+<section class="container about">
+  <nav>
+    <a href="about">${_("Vision")}</a>
+    <a href="faq" class="active">${_("Faq")}</a>
+    <a href="contact">${_("Contact")}</a>
+  </nav>
+
+
+  <section class="faq">
+    <section class="responses">
+      <section id="the-organization" class="category">
+        <h2>关于网站使用常见问题：</h2>
+        <article class="response">
+        <h3>1、  为什么我不能正常访问慕序(Xomics)？是不是我的浏览器不行？</h3>
+        <p>为了您顺利地完成课程学习，建议您将浏览器升级到最新版本。慕序支持的浏览器包括Firefox、Chrome、Safari等。</p>
+        </article>
+
+        <article class="response">
+        <h3>2、  为什么我播放课程视频时没有图像只有声音？我使用的是Chrome浏览器。</h3>
+        <p>请在浏览器的 设置 - 显示高级设置 中，将 使用硬件加速模式（如果可用） 一项取消勾选，并重新启动浏览器，即可正常观看。</p>
+        </article>
+
+        <article class="response">
+        <h3>3、  为什么我的课程视频一直处于缓冲状态？</h3>
+        <p>如果您遇到该情况，请将您所在的区域、网络类型（例如广东联通10M宽带）、IP地址、联系方式（QQ或手机）通过邮件反馈给我们（发送至发送至xomics@genomics.cn），我们会请视频技术客服人员跟你联系，帮您解决问题。</p>
+        </article>
+
+      </section>
+
+      <section id="students" class="category">
+        <h2>关于课程学习常见问题：</h2>
+        <article class="response">
+        <h3>1、  慕序的课程只有这几门吗？以后还会有新的课程吗？</h3>
+        <p>慕序网站的课程将持续更新，在课程上线前会有相关的课程公告并开放选课。</p>
+        </article>
+        <article class="response">
+        <h3>2、  如果我在“慕序”修完一门课，会获得证书吗？</h3>
+        <p>在“慕序”修完课程并通过考核之后，可以得到证书。</p>
+        </article>
+        <article class="response">
+        <h3>3、  为什么我无法提交课后作业？</h3>
+        <p>每次课后作业有截止时间，在左侧章节列表中显示。超过截止时间，课后作业将无法提交。</p>
+        </article>
+        <article class="response">
+        <h3>4、  如果我提交课后作业后发现答案有误，该如何更改？</h3>
+        <p>每道题目都有提交次数的限制，具体情况根据老师对题目的设置有所不同。在提交次数超过限制次数之后，就不能再更改了。</p>
+        </article>
+        <article class="response">
+        <h3>5、  如果我的某门课程成绩不合格，会受到什么影响吗？</h3>
+        <p>目前慕序上的各门课程成绩之间没有影响，某门课程成绩不合格不会影响到其他课程的学习。在学习过程中，您也可以随时退出课程，不需要担心有负面影响。</p>
+        </article>
+        <article class="response">
+        <h3>6、  我是在课程中期加入的，我还可以通过这门课程吗？</h3>
+        <p>平时作业的提交有截止时间，过了截止时间将无法提交，相应的成绩就没有了。平时作业成绩只占最后总成绩的一部分，课程能否通过取决于最后总成绩。</p>
+        </article>
+        <article class="response">
+        <h3>7、 我没有跟上学习进度，可以参加补考吗？</h3>
+        <p>目前的课程没有补考安排。一些课程明年还会重开，可以届时参加新一期的课程，按进度完成作业与考试。</p>
+        </article>
+        <article class="response">
+        <h3>8、 我想学习这门课，但是发现这门课已经结课了，我还可以提交作业参加考试并获得证书吗？</h3>
+        <p>对于已经结课的课程，您仍然可以观看视频进行学习，只是无法参加各考核环节，无法获得证书。或者您也可以在下一期该课程重新开课时按进度完成作业与考试，获得证书。</p>      
+        </article>
+      </section>
+
+    </section>
+
+  </section>
+</section>
+
+%if user.is_authenticated():
+<%include file="/signup_modal.html" />
+%endif
