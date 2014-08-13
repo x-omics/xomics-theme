@@ -7,30 +7,51 @@
 <%! from microsite_configuration import microsite %>
 
 <section class="find-courses">
+  <section class='filter_courses'>
+    <link rel="stylesheet" href="/static/css/filter_section.css">
+    <div class="course-content">
+      <div class="content-body">
+        <div class="selection-panel">
+          <div class="filter fl">
+            <div class="filter-title fl"><span>课程-筛选:</span></div>
+            <div class="filter-ul fl">
+              <ul id="searbar">
+                      <li id="subjectsearbar" class="tab1"><div><strong>分类：</strong><span></span></div></li>
+              </ul>
+            </div>
+          </div>
+          <div class="select-menu">
+            <div class="select-subject">
+              <div class="subject">
+                <div class="subject-left">科目：</div>
+                <div class="subject-right">
+                  <ul id="subject">
+                      <li class="tab1" name="all"><span>全部</span></li>     
+                      <li class="tab1" name="Biological"><span>生物</span></li>
+                      <li class="tab1" name="Health"><span>医学健康</span></li>
+                      <li class="tab1" name="Analysis"><span>数据分析</span></li>
+                      <li class="tab1" name="Computer"><span>计算机</span></li>
+                      <li class="tab1" name="Social"><span>社会科学</span></li>
+                      <li class="tab1" name="Ethics"><span>伦理哲思</span></li>
+                      <li class="tab1" name="Others"><span>其他</span></li>            
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="select-level">
+              <form class="search-container search" action="/find_course_by_search" method="get" id="search-form">
+                <input style="float:left;width: 92.7%;height: 40px;border-style:none" id="search-query" name="search" placeholder="请输入关键字..."  type="text">
+                  <ul class="search-menu" style="display: none;">
+                  </ul>
+                <input style="float:right;height: 40px;border-style:none;width: 7.3%;" value="搜索" type="submit">
+              </form>
+            </div>
 
-<%
-  course_index_overlay_text = microsite.get_value('course_index_overlay_text', _(u"学习生命科学前沿课程"))
-
-  # not sure why this is, but if I use static.url('images/edx_bw.png') then the HTML rendering
-  # of this template goes wonky
-
-  logo_file = microsite.get_value(
-    'course_index_overlay_logo_file', settings.STATIC_URL + 'themes/xomics-theme/images/Logo-header.png')
-%>
-
-  <header class="search">
-    <div class="inner-wrapper main-search">
-      <hgroup>
-       <form class="search-container search" action="/courses" method="get" id="search-form">
-         <input id="search-query" name="search" placeholder="请输入关键字..."  type="text">
-            <ul class="search-menu" style="display: none;">
-            </ul>
-         <input value="搜索" type="submit">
-       </form>
-      </hgroup>
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
-
+  </section>
 
   <section class="container">
     <section class="courses">
@@ -44,3 +65,10 @@
     </section>
   </section>
 </section>
+
+<%block name="js_extra">
+
+   <script type="text/javascript">
+
+   </script>
+</%block>
