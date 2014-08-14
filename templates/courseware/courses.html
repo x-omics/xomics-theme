@@ -14,19 +14,14 @@
         <div class="selection-panel">
           <div class="filter fl">
             <div class="filter-title fl"><span>课程-筛选:</span></div>
-            <div class="filter-ul fl">
-              <ul id="searbar">
-                      <li id="subjectsearbar" class="tab1"><div><strong>分类：</strong><span></span></div></li>
-              </ul>
-            </div>
+
           </div>
-          <div class="select-menu">
+
             <div class="select-subject">
               <div class="subject">
                 <div class="subject-left">分类：</div>
                 <div class="subject-right">
-                  <ul id="subject">
-                      <li class="tab1" name="all"><span>全部</span></li>     
+                  <ul id="subject">     
                       <li class="tab1" name="Biological"><span>生物</span></li>
                       <li class="tab1" name="Health"><span>医学健康</span></li>
                       <li class="tab1" name="Analysis"><span>数据分析</span></li>
@@ -37,17 +32,16 @@
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> 
+            
             <div class="select-level">
               <form class="search-container search" action="/find_course_by_search" method="get" id="search-form">
                 <input style="float:left;width: 92.7%;height: 40px;border-style:none" id="search-query" name="search" placeholder="请输入关键字..."  type="text">
-                  <ul class="search-menu" style="display: none;">
-                  </ul>
                 <input style="float:right;height: 40px;border-style:none;width: 7.3%;" value="搜索" type="submit">
               </form>
             </div>
 
-          </div>
+
         </div>
       </div>
     </div>
@@ -55,7 +49,7 @@
 
   <section class="container">
     <section class="courses">
-      <ul class="courses-listing">
+      <ul class="courses-listing" id="my_courses_list_nb">
         %for course in courses:
         <li class="courses-listing-item">
           <%include file="../course.html" args="course=course" />
@@ -66,9 +60,43 @@
   </section>
 </section>
 
+
 <%block name="js_extra">
+  
+  
+  <script type="text/javascript">
+  my_flag = 1;
+  $(function(){
+      
+      $('#subject li').click(function(){
+        if( my_flag == 1 ){
+          $(this).fadeIn().siblings().fadeOut();
+          var subject_name = $(this).attr('name');
+          var url = "find_courses_by_category?subject="+subject_name;
+          my_flag = 0;
+        }else{
+          $(this).fadeIn().siblings().fadeIn();
+          //var subject_name = $(this).attr('name');
+          var url = "find_courses_by_category?subject=all";
+          my_flag = 1;
+        }
 
-   <script type="text/javascript">
+          /*$.get( url, function( data ) {
+              alert(data);
+              $( '#my_courses_list_nb' ).html( data );
+          });*/
+          
+          $.ajax({
+              url:url,
+              type:'GET',
+              dataType: 'html',
+              success:function(data){
+                //alert('nn');
+                $('#my_courses_list_nb').html(data);
+              }
 
-   </script>
+            })
+      });
+  })
+  </script>
 </%block>
