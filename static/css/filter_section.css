@@ -17,7 +17,7 @@ li a:hover, li a:active{color:#ff7a31;}
 .course-content .select-menu{ height:40px; width:100%; position:absolute; background:#ffffff; left:0;top: 40px; border: 1px solid #dddddd;}
 
 .course-content .select-subject{position:absolute; top: 40px; height:65px; width:100%; border:1px solid #ddd; background:#dddddd margin-left:-1px;}
-.course-content .subject {height:40px; width:960px; padding-left:40px; position:absolute; left:0;top:0;}
+.course-content .subject {height:40px; width:960px; padding-left:10px; position:absolute; left:0;top:0;}
 .course-content .subject-left {float:left; height:40px; line-height:70px; font-weight:bold;}
 .course-content .subject-right ul {float:left;}
 .course-content .subject-right li { float:left; height:40px; line-height:40px; margin-top: -13px; display: inline-block; background: #fff; border-radius: 5px; margin: 0 10px 10px 0;}
