@@ -1,7 +1,7 @@
 @charset"utf-8";
 
 li a:link, li a:visited{color:#7f7f7f;}
-li a:hover, li a:active{color:#ff7a31;}
+li a:hover, li a:active{color:#9E9EE7;}
 /*------------------content-------------*/
 
 .course-content { margin: 40px auto; padding:0; max-width: 1180px; width:100%; }
@@ -22,10 +22,9 @@ li a:hover, li a:active{color:#ff7a31;}
 .course-content .subject-right ul {float:left;}
 .course-content .subject-right li { float:left; height:40px; line-height:40px; margin-top: -13px; display: inline-block; background: #fff; border-radius: 5px; margin: 0 10px 10px 0;}
 .course-content .subject-right li span {padding:0 10px; height:40px; display:block; padding-top: 10px;}
-.course-content .subject-right li span:hover{background:#ff7a31; padding: 10px 10px 0px; height:30px; color:#fff;}
-.course-content .subject-right .live li span {background:#ff7a31; padding: 10px 10px 0; height:30px; color:#fff; width:auto;}
-
+.course-content .subject-right li span:hover{background:#9E9EE7; padding: 10px 10px 0px; height:30px; color:#fff;}
+.course-content .subject-right .live li span {background:#9E9EE7; padding: 10px 10px 0; height:30px; color:#fff; width:auto;}
 
 .course-content .select-level{ height:40px; width:100%; position:absolute; left:0;top: 105px; background:#ffffff;border: 1px solid #dddddd; margin-left:-1px;}
 
-.course-content .live span{background:#ff7a31; height:40px; color:#fff;}
+.course-content .live span{background:#9E9EE7; height:40px; color:#fff;}

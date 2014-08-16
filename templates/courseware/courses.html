@@ -82,14 +82,24 @@ my_flag = 1;
       $('#subject li').click(function(){
         if( my_flag == 1 ){
           $(this).fadeIn().siblings().fadeOut();
+          $(this).css({"background":"#9E9EE7"});
+          $(".tab1 span").css({
+                        "background-image":"url('/static/themes/xomics-theme/images/x.png')",
+                        "background-repeat": "no-repeat",
+                        "background-position": "0px 0px",
+                        "position": "absolute"
+                      });
           var subject_name = $(this).attr('name');
           var url = "find_courses_by_category?subject="+subject_name;
           my_flag = 0;
         }else{
           $(this).fadeIn().siblings().fadeIn();
+          $(".tab1 span").removeAttr("style");
+          $(this).removeAttr("style");          
           var url = "find_courses_by_category?subject=all";
           my_flag = 1;
         }
+          
           $.ajax({
               url:url,
               type:'GET',
