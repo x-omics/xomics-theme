@@ -28,3 +28,5 @@ li a:hover, li a:active{color:#9E9EE7;}
 .course-content .select-level{ height:40px; width:100%; position:absolute; left:0;top: 105px; background:#ffffff;border: 1px solid #dddddd; margin-left:-1px;}
 
 .course-content .live span{background:#9E9EE7; height:40px; color:#fff;}
+
+#subject li{cursor: pointer;} /*By Hwei*/

@@ -6,6 +6,7 @@
 <%block name="pagetitle">${_("Courses")}</%block>
 <%! from microsite_configuration import microsite %>
 
+
 <section class="find-courses">
   <section class='filter_courses'>
     <link rel="stylesheet" href="/static/themes/xomics-theme/css/filter_section.css">
@@ -81,7 +82,7 @@ my_flag = 1;
       
       $('#subject li').click(function(){
         if( my_flag == 1 ){
-          $(this).fadeIn().siblings().fadeOut();
+          $(this).fadeIn(0).siblings().fadeOut(0);
           $(this).css({"background":"#9E9EE7"});
           $(".tab1 span").css({
                         "background-image":"url('/static/themes/xomics-theme/images/x.png')",
@@ -93,7 +94,7 @@ my_flag = 1;
           var url = "find_courses_by_category?subject="+subject_name;
           my_flag = 0;
         }else{
-          $(this).fadeIn().siblings().fadeIn();
+          $(this).fadeIn(0).siblings().fadeIn(0);
           $(".tab1 span").removeAttr("style");
           $(this).removeAttr("style");          
           var url = "find_courses_by_category?subject=all";
