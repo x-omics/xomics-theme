@@ -2,7 +2,6 @@
 
 /* !CPU HIGH, fix for IE6 shake when scroll */
 * html,* html body {
-  _background-image:url(about:blank);
   _background-attachment:fixed;
 }
 /* !CPU HIGH, fix for IE6 not support fixed position */
