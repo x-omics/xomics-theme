@@ -78,6 +78,9 @@
         <section class="courses">
             <ul class="courses-listing">
             %for course in courses:
+              %if loop.index >8:
+                <% break %> 
+              %endif
               <li class="courses-listing-item">
                 <%include file="course.html" args="course=course" />
               </li>
@@ -92,12 +95,7 @@
 <!--
 <section id="video-modal" class="modal home-page-video-modal video-modal">
   <div class="inner-wrapper">
-    <%
-      youtube_video_id = homepage_promo_video_youtube_id
-      if self.stanford_theme_enabled():
-        youtube_video_id = "2gmreZObCY4"
-    %>
-    <iframe width="640" height="360" src="//www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+    <video id="course-video" width="640" height="360" preload="none" src="https://dn-edx-static.qbox.me/edX_Anthem.mp4" controls=""></video>
   </div>
 </section>
 -->
