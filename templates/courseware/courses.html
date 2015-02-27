@@ -1,4 +1,6 @@
 <%! from django.utils.translation import ugettext as _ %>
+<%! from course_category.models import CourseCategoryConfig %>
+
 <%inherit file="../main.html" />
 
 <%namespace name='static' file='../static_content.html'/>
@@ -40,14 +42,9 @@
                 <div class="pull-left x-course-subject-catalog col-xs-4 col-sm-4 col-md-3 col-lg-2">分类:</div>
                 <div class="pull-left x-course-subjects col-xs-8 col-sm-8 col-md-9 col-lg-9">
                   <ul id="subject" class="clearfix">
-                    <li class="tab1" name="Biological"><span>生物</span></li>
-                    <li class="tab1" name="Health"><span>医学健康</span></li>
-                    <li class="tab1" name="Analysis"><span>数据分析</span></li>
-                    <li class="tab1" name="Computer"><span>计算机</span></li>
-                    <li class="tab1" name="Social"><span>社会科学</span></li>
-                    <li class="tab1" name="Ethics"><span>伦理哲思</span></li>
-                    <li class="tab1" name="Others"><span>其他</span></li>
-
+                    %for c in [category.strip() for category in CourseCategoryConfig.objects.values()[0]['course_category'].split(',')]:
+                        <li class="tab1" name="${loop.index}"><span>${c}</span></li>
+                    %endfor
                     <!--<li class="tab1" name="Biological"><span>生物</span></li>-->
                     <!--<li class="tab1" name="Health"><span>医学健康</span></li>-->
                     <!--<li class="tab1" name="Analysis"><span>数据分析</span></li>-->
