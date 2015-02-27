@@ -1,32 +1,226 @@
-@charset"utf-8";
+@charset "utf-8";
 
-li a:link, li a:visited{color:#7f7f7f;}
-li a:hover, li a:active{color:#9E9EE7;}
+li a:link, li a:visited {
+    color: #7f7f7f;
+}
+
+li a:hover, li a:active {
+    color: #9E9EE7;
+}
+
 /*------------------content-------------*/
 
-.course-content { margin: 40px auto; padding:0; max-width: 1180px; width:100%; }
-.course-content .content-body { margin:auto; width:100%; font: 13px/1.6 Microsoft YaHei,SimSun,tahoma,arial,sans-serif;}
-.course-content .content-body ul li{ list-style: none;}
+.course-content {
+    margin: 40px auto 0;
+    padding: 0;
+    max-width: 1180px;
+    width: 100%;
+}
 
-.course-content .selection-panel{ float:left; width:100%; height: 180px; position: relative; display:inline; left:0; top:0; }
+.course-content .content-body {
+    margin: auto;
+    width: 100%;
+    font: 13px/1.6 Microsoft YaHei, SimSun, tahoma, arial, sans-serif;
+}
 
-.course-content .filter{ height:auto; width:100%; position:absolute; background:#f7f7f7; left:0;top:0; line-height:40px; border: 1px solid #dddddd; height:40px;}
-.course-content .filter-title{ height: 40px; width: 150px; position: absolute; background: #f7f7f7; left: 0; top: 0; }
-.course-content .filter-title span{ font-weight:bold;padding-left:10px;}
-.course-content .filter-ul{ height:auto; width:80%; position: absolute; background: #f7f7f7; left: 150px; top: 0; }
-.course-content .select-menu{ height:40px; width:100%; position:absolute; background:#ffffff; left:0;top: 40px; border: 1px solid #dddddd;}
+.course-content .content-body ul li {
+    list-style: none;
+}
 
-.course-content .select-subject{position:absolute; top: 40px; height:65px; width:100%; border:1px solid #ddd; background:#dddddd margin-left:-1px;}
-.course-content .subject {height:40px; width:960px; padding-left:10px; position:absolute; left:0;top:0;}
-.course-content .subject-left {float:left; height:40px; line-height:70px; font-weight:bold;}
-.course-content .subject-right ul {float:left;}
-.course-content .subject-right li { float:left; height:40px; line-height:40px; margin-top: -13px; display: inline-block; background: #fff; border-radius: 5px; margin: 0 10px 10px 0;}
-.course-content .subject-right li span {padding:0 10px; height:40px; display:block; padding-top: 10px;}
-.course-content .subject-right li span:hover{background:#9E9EE7; padding: 10px 10px 0px; height:30px; color:#fff;}
-.course-content .subject-right .live li span {background:#9E9EE7; padding: 10px 10px 0; height:30px; color:#fff; width:auto;}
+.course-content .selection-panel {
+    float: left;
+    width: 100%;
+    position: relative;
+    display: inline;
+}
 
-.course-content .select-level{ height:40px; width:100%; position:absolute; left:0;top: 105px; background:#ffffff;border: 1px solid #dddddd; margin-left:-1px;}
+.course-content .filter {
+    width: 100%;
+    background: #006dcc;
+    line-height: 50px;
+    /*border: 1px solid #dddddd;*/
+    /*border-bottom: none;*/
+    height: 50px;
+}
 
-.course-content .live span{background:#9E9EE7; height:40px; color:#fff;}
+#x_search_panel_title {
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 10px;
+}
 
-#subject li{cursor: pointer;} /*By Hwei*/
+.select-level {
+    position: relative;
+}
+
+#x_course_panel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: none;
+    padding-bottom: 2em;
+    background-color: #FFFFFF;
+}
+
+.x-course-subject-catalog {
+    height: 70px;
+    line-height: 70px;
+    padding: 0 16px;
+    min-width: 50px;
+    text-align: right;
+    font-size: 1.32em;
+}
+
+.x-course-subjects {
+    max-width: 90%;
+}
+
+#subject {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#subject li {
+    float:left;
+    margin: 15px 0 0 12px;
+    width: 84px;
+    text-align: center;
+    background-color: #12274A;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+#subject li span {
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+/*By Hwei*/
+
+/******* Search Style Modify ********/
+/*        2014.11.16                */
+/*          熊伦                    */
+/***********************************/
+
+.x-inline {
+    display: inline-block;
+}
+
+#x_search_panel {
+    height: 50px;
+    overflow: hidden;
+    background-color: #006dcc;
+}
+
+#x_search_panel_title {
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+#x_search_query_wrapper {
+    display: inline-block;
+    width: auto;
+    position: relative;
+    height: 100%;
+}
+
+#x_search_input {
+    width: auto;
+    min-width: 70%;
+    height: 50px;
+    min-height: 50px;
+    padding-left: 50px;
+}
+
+#search-query {
+    border-style: none;
+    background: none;
+    min-width: 300px;
+    width: 320px;
+    max-width: 400px;
+    margin: 7px 0;
+    box-shadow: none;
+    line-height: 100%;
+    color: #FFF;
+}
+
+#search-query:focus {
+    box-shadow: none;
+    outline: none;
+    outline-offset: 0;
+}
+
+#x_search_label {
+    display: inline-block;
+    margin: 9px 0 0 10px;
+    height: 32px;
+    color: #ffffff;
+    background-color: #BAAF1D;
+}
+
+#x_search_label_title {
+    padding: 0 10px 0 30px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 15px;
+}
+
+#x_search_label_title span {
+    font-size: 15px;
+}
+
+#x_search_label_close {
+    height: 32px;
+    width: 30px;
+    background: url("/static/themes/xomics-theme/images/x.png") no-repeat center;
+    cursor: pointer;
+}
+
+.x-search-item {
+    font-size: 12px;
+    color: #FFFFFF;
+    overflow: hidden;
+    height: 50px;
+    line-height: 50px;
+}
+
+.x-search-item span,
+.x-search-item label {
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.x-search-item.pull-right {
+    background-color: #2FA1EC;
+    padding: 0 26px 0 40px;
+    min-width: 160px;
+    max-width: 200px;
+}
+
+/******* End Of Search Style ******/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

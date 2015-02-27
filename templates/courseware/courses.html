@@ -11,33 +11,82 @@
   <section class='filter_courses'>
     <link rel="stylesheet" href="/static/themes/xomics-theme/css/filter_section.css">
     <div class="course-content">
-      <div class="content-body">
+      <div class="content-body clearfix">
         <div class="selection-panel">
-          <div class="filter fl">
-            <div class="filter-title fl"><span>课程-筛选:</span></div>
-          </div>
-          <div class="select-subject">
-            <div class="subject">
-              <div class="subject-left">分类:</div>
-              <div class="subject-right">
-                <ul id="subject">
-                  <li class="tab1" name="Biological"><span>生物</span></li>
-                  <li class="tab1" name="Health"><span>医学健康</span></li>
-                  <li class="tab1" name="Analysis"><span>数据分析</span></li>
-                  <li class="tab1" name="Computer"><span>计算机</span></li>
-                  <li class="tab1" name="Social"><span>社会科学</span></li>
-                  <li class="tab1" name="Ethics"><span>伦理哲思</span></li>
-                  <li class="tab1" name="Others"><span>其他</span></li>
-                </ul>
+          <div class="filter clearfix">
+            <div id="x_search_panel" class="x-search-item pull-left">
+              <div class="pull-left x-inline">
+                <span id="x_search_panel_title">课程-筛选:</span>
+              </div>
+              <div id="x_search_query_wrapper" class="clearfix">
+                <input id="search-query" class="form-control" placeholder="请输入关键字..." type="text">
+                <div id="x_search_label" class="clearfix hidden">
+                  <div id="x_search_label_title" class="x-inline pull-left">
+                  </div>
+                  <div id="x_search_label_close" class="x-inline pull-left"></div>
+                </div>
               </div>
             </div>
+            <div class="x-search-item pull-right">
+              <span>仅显示：</span>
+              <input type="checkbox" id="x_course_open" class="checkbox"><label for="x_course_open">已开
+              课</label>
+              <input type="checkbox" id="x_course_at" class="checkbox"><label for="x_course_at">有助教</label>
+            </div>
           </div>
-          
           <div class="select-level">
-            <form class="search-container search" id="search-form" onsubmit="return search();" >
-              <input style="float:left;width: 92.7%;height: 40px;border-style:none" id="search-query" placeholder="请输入关键字..."  type="text">
-              <input style="float:right;height: 40px;border-style:none;width: 7.3%;" value="搜索" type="submit" >
-            </form>
+            <div id="x_course_panel" class="select-subject container-fluid">
+              <div class="x_course_subject clearfix row">
+                <div class="pull-left x-course-subject-catalog col-xs-4 col-sm-4 col-md-3 col-lg-2">分类:</div>
+                <div class="pull-left x-course-subjects col-xs-8 col-sm-8 col-md-9 col-lg-9">
+                  <ul id="subject" class="clearfix">
+                    <li class="tab1" name="Biological"><span>生物</span></li>
+                    <li class="tab1" name="Health"><span>医学健康</span></li>
+                    <li class="tab1" name="Analysis"><span>数据分析</span></li>
+                    <li class="tab1" name="Computer"><span>计算机</span></li>
+                    <li class="tab1" name="Social"><span>社会科学</span></li>
+                    <li class="tab1" name="Ethics"><span>伦理哲思</span></li>
+                    <li class="tab1" name="Others"><span>其他</span></li>
+
+                    <!--<li class="tab1" name="Biological"><span>生物</span></li>-->
+                    <!--<li class="tab1" name="Health"><span>医学健康</span></li>-->
+                    <!--<li class="tab1" name="Analysis"><span>数据分析</span></li>-->
+                    <!--<li class="tab1" name="Computer"><span>计算机</span></li>-->
+                    <!--<li class="tab1" name="Social"><span>社会科学</span></li>-->
+                    <!--<li class="tab1" name="Ethics"><span>伦理哲思</span></li>-->
+                    <!--<li class="tab1" name="Others"><span>其他</span></li>-->
+                    <!--<li class="tab1" name="Biological"><span>生物</span></li>-->
+                    <!--<li class="tab1" name="Health"><span>医学健康</span></li>-->
+                    <!--<li class="tab1" name="Analysis"><span>数据分析</span></li>-->
+                    <!--<li class="tab1" name="Computer"><span>计算机</span></li>-->
+                    <!--<li class="tab1" name="Social"><span>社会科学</span></li>-->
+                    <!--<li class="tab1" name="Ethics"><span>伦理哲思</span></li>-->
+                    <!--<li class="tab1" name="Others"><span>其他</span></li>-->
+                    <!--<li class="tab1" name="Biological"><span>生物</span></li>-->
+                    <!--<li class="tab1" name="Health"><span>医学健康</span></li>-->
+                    <!--<li class="tab1" name="Analysis"><span>数据分析</span></li>-->
+                    <!--<li class="tab1" name="Computer"><span>计算机</span></li>-->
+                    <!--<li class="tab1" name="Social"><span>社会科学</span></li>-->
+                    <!--<li class="tab1" name="Ethics"><span>伦理哲思</span></li>-->
+                    <!--<li class="tab1" name="Others"><span>其他</span></li>-->
+                    <!--<li class="tab1" name="Biological"><span>生物</span></li>-->
+                    <!--<li class="tab1" name="Health"><span>医学健康</span></li>-->
+                    <!--<li class="tab1" name="Analysis"><span>数据分析</span></li>-->
+                    <!--<li class="tab1" name="Computer"><span>计算机</span></li>-->
+                    <!--<li class="tab1" name="Social"><span>社会科学</span></li>-->
+                    <!--<li class="tab1" name="Ethics"><span>伦理哲思</span></li>-->
+                    <!--<li class="tab1" name="Others"><span>其他</span></li>-->
+                    <!--<li class="tab1" name="Biological"><span>生物</span></li>-->
+                    <!--<li class="tab1" name="Health"><span>医学健康</span></li>-->
+                    <!--<li class="tab1" name="Analysis"><span>数据分析</span></li>-->
+                    <!--<li class="tab1" name="Computer"><span>计算机</span></li>-->
+                    <!--<li class="tab1" name="Social"><span>社会科学</span></li>-->
+                    <!--<li class="tab1" name="Ethics"><span>伦理哲思</span></li>-->
+                    <!--<li class="tab1" name="Others"><span>其他</span></li>-->
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -57,60 +106,5 @@
 </section>
 
 <%block name="js_extra">
-<script type = "text/javascript">
-
-</script>
-<script type = "text/javascript">
-function search() {
-    var search = $('#search-query').val();
-    if (search == '') search = '';
-    var url = "find_courses_by_search?search=" + search;
-    $.ajax({
-            url: url,
-            type: 'GET',
-            dataType: 'HTML',
-            success: function(data) {
-                    $('#my_courses_list_nb').html(data);
-                }
-            });
-        return false;
-    }
-
-my_flag = 1;
-
-  $(function(){
-      
-      $('#subject li').click(function(){
-        if( my_flag == 1 ){
-          $(this).fadeIn(0).siblings().fadeOut(0);
-          $(this).css({"background":"#9E9EE7"});
-          $(".tab1 span").css({
-                        "background-image":"url('/static/themes/xomics-theme/images/x.png')",
-                        "background-repeat": "no-repeat",
-                        "background-position": "0px 0px",
-                        "position": "absolute"
-                      });
-          var subject_name = $(this).attr('name');
-          var url = "find_courses_by_category?subject="+subject_name;
-          my_flag = 0;
-        }else{
-          $(this).fadeIn(0).siblings().fadeIn(0);
-          $(".tab1 span").removeAttr("style");
-          $(this).removeAttr("style");          
-          var url = "find_courses_by_category?subject=all";
-          my_flag = 1;
-        }
-          
-          $.ajax({
-              url:url,
-              type:'GET',
-              dataType: 'html',
-              success:function(data){
-                $('#my_courses_list_nb').html(data);
-              }
-
-            })
-      });
-  })
-</script>
+<script src="/static/themes/xomics-theme/js/course_search.js"></script>
 </%block>
