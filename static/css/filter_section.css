@@ -176,7 +176,7 @@ li a:hover, li a:active {
 #x_search_label_close {
     height: 32px;
     width: 30px;
-    background: url("/static/themes/xomics-theme/images/x.png") no-repeat center;
+    background: url("../images/x.png") no-repeat center;
     cursor: pointer;
 }
 
