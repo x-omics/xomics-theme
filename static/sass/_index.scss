@@ -1,16 +1,49 @@
 
 
 .home > header {
-  .banner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: auto;
 
-    ul > li {
-      list-style: none;
-      float: left;
-      background-image: $homepage-bg-image;
+  margin: 0;
+
+  #pageBanner {
+    .slider-arrow-left, .slider-arrow-right {
+      display: block;
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      cursor: pointer;
+      background: url('../themes/xomics-theme/images/arrow.png') center center no-repeat;
+      overflow: hidden;
+    }
+
+    .slider-arrow-left {
+      background-position: -3px -33px; top: 123px; left: 8px;
+      &:hover {
+        background-position: -123px -33px;
+      }
+    }
+    .slider-arrow-right {
+      background-position: -63px -33px; top: 123px; right: 8px;
+      &: hover {
+        background-position: -183px -33px;
+      }
+    }
+
+    .slider-indicator {
+      div {
+        background-position: -5px -5px;
+        &:hover {
+          background-position: -35px -5px;
+        }
+      }
+      .av {
+        background-position: -65px -5px;
+        &:hover {
+          background-position: -35px -5px;
+        }
+      }
+      .dn, .dn:hover {
+        background-position: -95px -5px;
+      }
     }
   }
 }

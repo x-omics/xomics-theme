@@ -19,12 +19,23 @@
 
 <section class="home">
   <header>
-    <div class="banner" id="pageBanner">
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+    <div id="pageBanner" style="position: relative; margin: 0; padding: 0; top: 0px; left: 0px; width: 1300px; height: 300px;">
+      <div data-u="slides" style="position: absolute; cursor: move; left: 0px; top: 0px; width: 1300px; height: 300px;">
+        <div>
+          <img data-u="image" src="${static.url('themes/xomics-theme/images/sunrise.jpg')}" alt="Xomics">
+        </div>
+        <div>
+          <img data-u="image" src="${static.url('themes/xomics-theme/images/sunrise.jpg')}" alt="Xomics">
+        </div>
+        <div>
+          <img data-u="image" src="${static.url('themes/xomics-theme/images/sunrise.jpg')}" alt="Xomics">
+        </div>
+      </div>
+      <div data-u="navigator" class="slider-indicator">
+        <div data-u="prototype"></div>
+      </div>
+      <span data-u="arrowleft" class="slider-arrow-left"></span>
+      <span data-u="arrowright" class="slider-arrow-right"></span>
     </div>
   </header>
   <section class="courses-container">
@@ -51,7 +62,7 @@
 </section>
 
 <%block name="js_extra">
-    <script src="//unslider.com/unslider.min.js"></script>
+    <script src="${static.url('themes/xomics-theme/script/jssor.slider.mini.js)}"></script>
     <script type="text/javascript">
       $(window).load(function() {
         if(getParameterByName('next')) {
@@ -59,7 +70,35 @@
         }
       });
       $(function() {
-        $('.banner').unslider();
+        var slider = new $JssorSlider$('pageBanner', {
+          $AutoPlay: true,
+          $AutoPlayInterval: 4000,
+          $ArrowKeyNavigation: true,
+          $SlideDuration: 1000,
+          $DisplayPieces: 1,
+          $BulletNavigatorOptions: {
+            $Class: $JssorBulletNavigator$,
+            $AutoCenter: 1,
+            $Steps: 1
+          },
+          $ArrowNavigatorOptions: {
+            $Class: $JssorArrowNavigator$,
+            $ChanceToShow: 1,
+            $AutoCenter: 2,
+            $Steps: 1
+          }
+        });
+
+        function sliderScale() {
+          var bw = document.body.clientWidth;
+          if (bw) {
+            slider.$ScaleWidth(Math.min(bw, 1920));
+          }
+        }
+        sliderScale();
+        $(window).on('load', sliderScale);
+        $(window).on('resize', sliderScale);
+        $(window).on('orientationchange', sliderScale);
       });
     </script>
 </%block>
