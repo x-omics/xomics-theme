@@ -29,17 +29,27 @@
     }
 
     .slider-indicator {
-      div {
+      position: absolute;
+      bottom: 26px;
+      left: 6px;
+      div, div:hover, .av {
         background-position: -5px -5px;
-        &:hover {
-          background-position: -35px -5px;
-        }
+        position: absolute;
+        width: 19px;
+        height: 19px;
+        text-align: center;
+        line-height: 19px;
+        color: white;
+        font-size: 12px;
+        background: url('../themes/xomics-theme/indicator.png') no-repeat;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      div:hover, .av:hover {
+        background-position: -35px -5px;
       }
       .av {
         background-position: -65px -5px;
-        &:hover {
-          background-position: -35px -5px;
-        }
       }
       .dn, .dn:hover {
         background-position: -95px -5px;
