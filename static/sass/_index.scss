@@ -5,6 +5,7 @@
   margin: 0;
   height: auto;
   background-image: none;
+  border: none;
 
   #pageBanner {
     .slider-arrow-left, .slider-arrow-right {
@@ -66,30 +67,39 @@
 
 .category-container {
   box-sizing: border-box;
-  padding: 0.5em 0;
+  padding: 0px;
+  background-color: #307D9A;
 }
 
 .category-list {
   list-style: none;
-  margin: 0;
-  padding: 0 0 0 10em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px;
   box-sizing: border-box;
+  border-left: 1px solid #135871;
 
   li {
     display: inline-block;
     box-sizing: border-box;
     float: left;
 
+    &:hover {
+      background-color: #135871;
+    }
+
     a {
       display: inline-block;
       box-sizing: border-box;
-      width: 6em;
-      border: 1px solid #777;
-      background-color: #ef5b0e;
+      width: 7em;
+      letter-spacing: 2px;
+      border-right: #135871;
+      background-color: #307D9A;
       color: white;
-      height: 1.7em;
-      line-height: 1.7em;
+      height: 2.7em;
+      line-height: 2.7em;
       overflow: hidden;
+      text-decoration: none;
     }
 
   }
