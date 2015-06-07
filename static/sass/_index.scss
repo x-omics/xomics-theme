@@ -31,12 +31,11 @@
     }
 
     .slider-indicator {
+
       position: absolute;
       bottom: 26px;
       left: 6px;
-      div {
-        background-position: -5px -5px;
-      }
+
       div, div:hover, .av {
         position: absolute;
         width: 19px;
@@ -49,8 +48,11 @@
         overflow: hidden;
         cursor: pointer;
       }
+      div {
+        background-position: -5px -5px !important;
+      }
       div:hover, .av:hover {
-        background-position: -35px -5px;
+        background-position: -35px -5px !important;
       }
       .av {
         background-position: -65px -5px;
