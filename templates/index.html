@@ -63,8 +63,8 @@
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         <section class="courses">
             <ul class="courses-listing">
-            ## cap for showing 9 or less courses
-            %for course in courses[:9]:
+            ## cap for showing 8 or less courses
+            %for course in courses[:8]:
               <li class="courses-listing-item">
                 <%include file="course.html" args="course=course" />
               </li>
