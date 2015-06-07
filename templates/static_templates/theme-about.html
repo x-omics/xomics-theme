@@ -1,0 +1,53 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from django.core.urlresolvers import reverse %>
+<%namespace name='static' file='/static_content.html'/>
+
+<%inherit file="/main.html" />
+
+<%block name="title"><title>关于慕序</title></%block>
+
+<section class="container about">
+  <nav>
+    <a href="/about" class="active">${_("Vision")}</a>
+    <a href="/faq">${_("Faq")}</a>
+    <a href="/contact">${_("Contact")}</a>
+  </nav>
+
+  <section class="vision">
+    ## <div class="our-mission">
+    ##   <div class="logo">
+    ##     <img src="${static.url('images/edx-logo-large-bw.png')}">
+    ##   </div>
+    ##   <h2 class="mission-quote">&ldquo;${_('The mission of <span class="edx">{edX}</span> is to enhance human fulfillment worldwide through online ## learning, transforming education in quality, efficiency and scale through technology and research, for the benefit of campus-based ## students and the worldwide community of online learners.').format(edX="edX")}&rdquo;</h2>
+    ## </div>
+    <section>
+      <h2>关于慕序 （X-Omics）</h2>
+      </br >
+      </br >
+      <div style="font-family:宋体;font-size:12.0pt;line-height:150%;">
+      <ul>
+      <li>慕序（X-Omics）是华大学院的网络公开课程开发平台，致力于传播生命科学和基因科学知识。 </li>
+      <li>“序”出自《孟子·滕文公上》:“夏曰校,殷曰庠,周曰序”，周朝意为学校， 在这里还有序列的含义。</li>
+      <li>我们邀请华大内外的领域专业人士和科学家，为大家提供高品质精心设计的学习内容，凡是有兴趣的人，都可以参与学习。</li>
+      <li>学习主要在网上完成，没有时间空间限制，自主控制学习节奏。</li>
+      <li>学习不再无聊单调，线上互动结合线下活动，有师生互动，还有小组学习，丰富的学习体验。</li>
+      <li>打造学习社区平台，集合大家的智慧。</li>
+      </ul>
+      </div>
+    </section>
+    </br >
+    </br >
+    </br >
+
+    <section>
+      <h2>关于华大学院 </h2>
+      </br >
+      </br >
+      <p style="font-family:宋体;font-size:12.0pt;line-height:150%">华大基因学院是深圳市“十二五”期间拟建的10个特色学院之一，是由深圳市教育主管部门批准揭牌成立的一个特色学院。学院主要开展生物产业类高端人才培训活动，待条件成熟时，将按照国家有关规定申请开展学历教育。秉承华大基因不断进取，创新争先的科研精神，及培养创新人才、推动生物科技发展的目标，华大基因学院凭借硬件平台、雄厚师资力量、项目实践与理论学习相结合等优势，打造国际化水平的跨组学研究型特色学院。</p>
+      </br >
+      </br >
+      </br >
+
+  </section>
+</section>
+

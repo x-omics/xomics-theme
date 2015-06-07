@@ -1,26 +1,101 @@
 ## mako
 <%! from django.core.urlresolvers import reverse %>
-<%namespace name='static' file='/static_content.html'/>
-<%! from datetime import datetime %>
-<%! from pytz import UTC %>
+<%! from django.utils.translation import ugettext as _ %>
+<%namespace name='static' file='static_content.html'/>
 
-<div class="wrapper-footer">
+<div class="wrapper wrapper-footer">
   <footer>
     <div class="colophon">
       <nav class="nav-colophon">
-        <ol>
-          <li><a href="${reverse('tos')}">Terms of Service</a></li>
-          <li><a href="${reverse('tos')}#privacy">Privacy Policy</a></li>
-          <li><a href="${reverse('tos')}#honor">Honor Code</a></li>
-          <li><a href="${reverse('tos')}#copyright">Copyright</a></li>
-          <li><a href="${reverse('about')}#careers">Careers</a></li>
-          <li><a href="${reverse('about')}#contact">Contact</a></li>
-          <li><a href="${marketing_link('FAQ')}">Help</a></li>
-        </ol>
+      <ol>
+          <li class="nav-colophon-01">
+          <a id="about" href="${marketing_link('ABOUT')}">
+              ${_("About")}
+          </a>
+          </li>
+          <!--
+          <li class="nav-colophon-02">
+          <a id="jobs" href="${marketing_link('JOBS')}">
+              ${_("Jobs")}
+          </a>
+          </li>
+          <li class="nav-colophon-03">
+          <a id="press" href="${marketing_link('PRESS')}">
+              ${_("Press")}
+          </a>
+          </li>
+          -->
+          <li class="nav-colophon-04">
+          <a id="faq" href="${marketing_link('FAQ')}">
+              ${_("FAQ")}
+          </a>
+          </li>
+          <li class="nav-colophon-05">
+          <a id="contact" href="${marketing_link('CONTACT')}">
+              ${_("Contact")}
+          </a>
+          </li>
+      </ol>
+      </nav>
+
+      <div class="colophon-about">
+        <img src="${static.url('themes/xomics-theme/images/logo-footer.png')}"  style="width: 8%;height: 8%;margin-top: 0px;"/>
+
+        <p>慕序(X-omics)是华大学院创建的网络开放课程平台，致力于传播基因生命科学和健康医学相关知识，汇聚华大内外学术界精英的智慧，提供线上线下丰富的互动教学活动，打造你我他的学习社区。</p>
+      </div>
+    </div>
+
+    <div class="references">
+      <nav class="nav-social">
+        <ul>
+          <li class="nav-social-01" style="margin-right: 20px;">
+            <a href="http://www.genomics.cn" target="_blank" rel="external">
+              <img src="${static.url('themes/xomics-theme/images/BGI2.png')}" alt="华大基因" style="width: 60px;"/>
+            </a>
+          </li>
+          <li class="nav-social-02" style="margin-right: 20px;">
+            <a href="" rel="external">
+              <img src="${static.url('themes/xomics-theme/images/college2.png')}" alt="华大基因学院" style="width: 60px;"/>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <p class="copyright">${_("&copy; 2014 {platform_name}, some rights reserved.").format(platform_name=settings.PLATFORM_NAME)}</p>
+
+      <nav class="nav-legal">
+        <ul>
+          <li class="nav-legal-01">
+            <a href="/tos" target="_blank" >服务条款</a>
+          </li>
+          <li class="nav-legal-01">
+            <a href="/honor" target="_blank" >诚信准则</a>
+          </li>
+          <li class="nav-legal-02">
+            <a href="/privacy" target="_blank" >隐私政策</a>
+          </li>
+        </ul>
       </nav>
     </div>
-    <div class="references">
-      <span>Built on <a href="http://code.edx.org">OpenEdX</a>.</span>
-    </div>
   </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function getCategory() {
+    var xhr = new XMLHttpRequest();
+    var url = '/find_course_by_search?q=基因';
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          console.log(xhr.responseText);
+        } else {
+          console.log('xhr request failed!');
+        }
+      }
+    };
+    xhr.open('GET', url);
+    xhr.send(null);
+  }
+  //getCategory();
+});
+</script>
 </div>
