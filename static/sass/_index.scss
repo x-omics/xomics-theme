@@ -3,11 +3,38 @@
 header.global {
   background: url('../themes/xomics-theme/images/back-top.jpg') no-repeat;
   background-size: 100% 100%;
+
+  .nav-global li a {
+    color: white;
+  }
+
+  .primary>a {
+    box-shadow: none;
+  }
+
 }
 
 .wrapper-footer {
   background: url('../themes/xomics-theme/images/back-bottom.jpg') no-repeat;
   background-size: 100% 100%;
+  footer {
+    .colophon {
+      .nav-colophon li a {
+        color: white;
+      }
+      .colophon-about p {
+        color: #EEE;
+        margin: 0;
+        padding: 0;
+        background: inherit;
+      }
+    }
+
+    .copyright,
+    .nav-legal li a {
+      color: #EEEEEE;
+    }
+  }
 }
 
 .home > header {
