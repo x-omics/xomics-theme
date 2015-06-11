@@ -2,8 +2,8 @@
 
 header.global,
 header.global.slim {
-  background: url('../themes/xomics-theme/images/back-top.jpg') no-repeat;
-  background-size: 100% 100%;
+  background: url('../themes/xomics-theme/images/back-top.jpg') no-repeat !important;
+  background-size: 100% 100% !important;
 
   .nav-global li a {
     color: white;
@@ -11,6 +11,13 @@ header.global.slim {
 
   .primary>a {
     box-shadow: none;
+  }
+
+  nav h2 {
+    text-shadow: none;
+    &, & > .provider {
+      color: #EEE;
+    }
   }
 
 }
