@@ -78,7 +78,6 @@
     var q = args['q'] || '';
     var coursesContainer = document.getElementsByClassName('courses-listing')[0];
     if (q) {
-      coursesContainer.innerHTML = '';
       getCoursesBySearch(q);
     }
 
@@ -146,6 +145,7 @@
             renderHTML(result);
           } else {
             // error
+            coursesContainer.innerHTML = '<div>未找到结果</div>';
           }
         }
       };
