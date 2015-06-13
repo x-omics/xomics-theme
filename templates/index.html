@@ -109,6 +109,19 @@
           </li>
         </ul>
       </section>
+      <section class="courses">
+        <div>
+          <span class="courses-newest courses-label">最新课程</span>
+        </div>
+        <ul class="courses-listing clearfix">
+          ## cap for showing 8 or less courses
+          %for course in courses[:8]:
+          <li class="courses-listing-item">
+            <%include file="course.html" args="course=course" />
+          </li>
+          %endfor
+        </ul>
+      </section>
     </section>
   </section>
 </section>
