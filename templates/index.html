@@ -68,7 +68,10 @@
 
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         <section class="courses">
-            <ul class="courses-listing">
+            <div>
+              <span class="courses-newest courses-label">最新课程</span>
+            </div>
+            <ul class="courses-listing clearfix">
             ## cap for showing 8 or less courses
             %for course in courses[:8]:
               <li class="courses-listing-item">
@@ -82,6 +85,30 @@
         </div>
       % endif
 
+    </section>
+    <section class="recommand-courses">
+      <div>
+        <span class="courses-label">推荐课程</span>
+      </div>
+      <section class="recommand-container">
+        <ul class="recommand-list">
+          <li class="recommand-list-item">
+            <a href="/courses?sub_category=hereditary" class="recommand-category">遗传咨询师</a>
+          </li>
+          <li class="recommand-list-item">
+            <a href="/courses?sub_category=bioinfo" class="recommand-category">生物信息</a>
+          </li>
+          <li class="recommand-list-item">
+            <a href="/courses?sub_category=hereditary" class="recommand-category">遗传咨询师</a>
+          </li>
+          <li class="recommand-list-item">
+            <a href="/courses?sub_category=hereditary" class="recommand-category">遗传咨询师</a>
+          </li>
+          <li class="recommand-list-item">
+            <a href="/courses?sub_category=hereditary" class="recommand-category">遗传咨询师</a>
+          </li>
+        </ul>
+      </section>
     </section>
   </section>
 </section>
