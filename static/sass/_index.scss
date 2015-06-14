@@ -124,22 +124,30 @@ header.global.slim {
 }
 
 .category-list {
+
+  $highlightColor: #135871;
+  $normalColor: #307D9A;
+
   list-style: none;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0px;
   box-sizing: border-box;
-  border-left: 1px solid #135871;
+  border-left: 1px solid $highlightColor;
 
   li {
     display: inline-block;
     box-sizing: border-box;
     float: left;
-    border-right: 1px solid #135871;
+    border-right: 1px solid $highlightColor;
     position: relative;
 
     &:hover, &.active {
-      background-color: #135871;
+      background-color: $highlightColor;
+
+      a {
+        background-color: transparent;
+      }
 
       .subcategory-wrapper {
         display: block;
@@ -156,10 +164,22 @@ header.global.slim {
         list-style: none;
         margin: 0;
         padding: 0;
+        border: 1px solid $highlightColor;
 
         li {
           display: inline-block;
           float: left;
+          width: 6em;
+          height: 2em;
+          line-height: 2em;
+          text-align: center;
+          cursor: pointer;
+          border-right: 1px solid $highlightColor;
+
+          &:last-child {
+            border-right: none;
+          }
+
         }
 
       }
@@ -171,15 +191,15 @@ header.global.slim {
       box-sizing: border-box;
       width: 7em;
       letter-spacing: 2px;
-      border-right: #135871;
-      background-color: #307D9A;
+      border-right: $highlightColor;
+      background-color: $normalColor;
       color: white;
       height: 2.7em;
       line-height: 2.7em;
       overflow: hidden;
       text-align: center;
       &:hover {
-        background-color: #135871;
+        //background-color: $highlightColor;
         text-decoration: none;
       }
     }
