@@ -41,7 +41,7 @@
         <a href="/courses?category=medihealth">医学健康</a>
         <div class="subcategory-wrapper">
           <ul class="subcategory-list clearfix">
-            <li class="subcategory-item" data-index="hereditary">遗传咨询师</li>
+            <li class="subcategory-item" data-parent="medihealth" data-index="hereditary">遗传咨询师</li>
           </ul>
         </div>
       </li>
@@ -49,7 +49,7 @@
         <a href="/courses?category=analysis">数据分析</a>
         <div class="subcategory-wrapper">
           <ul class="subcategory-list clearfix">
-            <li class="subcategory-item" data-index="bioinfo">生物信息</li>
+            <li class="subcategory-item" data-parent="analysis" data-index="bioinfo">生物信息</li>
           </ul>
         </div>
       </li>
@@ -118,7 +118,7 @@
       clearHighlight();
 
       // 2. search category add hightlight
-      addHightlight(category, subcategory);
+      addHighlight(category, subcategory);
 
       // 3. get courses from server
       var _url = '/category_courses?category=' + category;
@@ -129,16 +129,16 @@
     }
 
     function clearHighlight() {
-      var currentCategory = document.querySelector('category-item active');
+      var currentCategory = document.querySelector('.category-item.active');
       if (currentCategory && currentCategory.getAttribute('data-index') !== category) {
         currentCategory.className = "category-item";
       }
     }
 
-    function addHightlight(category, subcategory) {
+    function addHighlight(category, subcategory) {
       var categories, subcategories;
       if (category) {
-        categories = document.querySelector('category-item');
+        categories = document.querySelector('.category-item');
         Array.prototype.every.call(categories, function (v) {
           var attr = v.getAttribute('data-index');
           if (attr === category) {
@@ -150,7 +150,7 @@
       }
 
       if (subcategory) {
-        subcategories = document.querySelector('subcategory-item');
+        subcategories = document.querySelector('.subcategory-item');
         Array.prototype.every.call(subcategories, function (v) {
           var attr = v.getAttribute('data-index');
           if (attr === subcategory) {
@@ -176,6 +176,7 @@
         coursesContainer.innerHTML = _html;
       } catch (err) {
         console.log(err);
+        coursesContainer.innerHTML = '<div class="courses-notfound">未找到结果</div>';
       }
       function render(course) {
         return '<li class="courses-listing-item">' +
@@ -216,7 +217,7 @@
             renderHTML(result);
           } else {
             // error
-            coursesContainer.innerHTML = '<div>未找到结果</div>';
+            coursesContainer.innerHTML = '<div class="courses-notfound">未找到结果</div>';
           }
         }
       };
