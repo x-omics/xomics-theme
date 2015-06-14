@@ -139,13 +139,11 @@ header.global.slim {
   margin: 0 auto;
   padding: 0px;
   box-sizing: border-box;
-  border-left: 1px solid $highlightColor;
 
   li {
     display: inline-block;
     box-sizing: border-box;
     float: left;
-    border-right: 1px solid $highlightColor;
     position: relative;
 
     &:hover, &.active {
@@ -204,7 +202,6 @@ header.global.slim {
       box-sizing: border-box;
       width: 7em;
       letter-spacing: 2px;
-      border-right: $highlightColor;
       background-color: $normalColor;
       color: white;
       height: 2.7em;
