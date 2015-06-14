@@ -32,27 +32,32 @@
 %>
 
 <section class="find-courses">
-  <section class="category-container">
+  <section class="category-container ">
     <ul class="category-list clearfix">
-      <li class="category-item">
+      <li class="category-item active" data-index="biology">
         <a href="/courses?category=biology">生物</a>
+        <div class="subcategory-wrapper">
+          <ul class="subcategory-list clearfix">
+            <li class="subcategory-item">ANC</li>
+          </ul>
+        </div>
       </li>
-      <li class="category-item">
+      <li class="category-item" data-index="medihealth">
         <a href="/courses?category=medihealth">医学健康</a>
       </li>
-      <li class="category-item">
+      <li class="category-item" data-index="analysis">
         <a href="/courses?category=analysis">数据分析</a>
       </li>
-      <li class="category-item">
+      <li class="category-item" data-index="computer">
         <a href="/courses?category=computer">计算机</a>
       </li>
-      <li class="category-item">
+      <li class="category-item" data-index="socialsci">
         <a href="/courses?category=socialsci">社会科学</a>
       </li>
-      <li class="category-item">
+      <li class="category-item" data-index="philosophy">
         <a href="/courses?category=philosophy">伦理哲思</a>
       </li>
-      <li class="category-item">
+      <li class="category-item" data-index="others">
         <a href="/courses?category=others">其它</a>
       </li>
     </ul>
@@ -94,10 +99,8 @@
     var coursesContainer = document.getElementsByClassName('courses-listing')[0];
     if (q) {
       getCoursesBySearch(q);
-    } else if (subcategory) {
-      getCoursesBySubCategory(subcategory);
     } else if (category) {
-      getCoursesByCategory(category);
+      getCoursesByCategory(category, subcategory);
     }
 
     function getCoursesBySearch(str) {
@@ -105,14 +108,53 @@
       getCourses(_url);
     }
 
-    function getCoursesBySubCategory(str) {
-      var _url = '/category_courses?subcategory=' + str;
+    function getCoursesByCategory(category, subcategory) {
+      // 1. remove hightlight category
+      clearHighlight();
+
+      // 2. search category add hightlight
+      addHightlight(category, subcategory);
+
+      // 3. get courses from server
+      var _url = '/category_courses?category=' + category;
+      if (subcategory) {
+        _url = _url + '&subcategory=' + subcategory;
+      }
       getCourses(_url);
     }
 
-    function getCoursesByCategory(str) {
-      var _url = '/category_courses?category=' + str;
-      getCourses(_url);
+    function clearHighlight() {
+      var currentCategory = document.querySelector('category-item active');
+      if (currentCategory && currentCategory.getAttribute('data-index') !== category) {
+        currentCategory.className = "category-item";
+      }
+    }
+
+    function addHightlight(category, subcategory) {
+      var categories, subcategories;
+      if (category) {
+        categories = document.querySelector('category-item');
+        Array.prototype.every.call(categories, function (v) {
+          var attr = v.getAttribute('data-index');
+          if (attr === category) {
+            v.className = 'category-item active';
+            return false;
+          }
+          return true;
+        });
+      }
+
+      if (subcategory) {
+        subcategories = document.querySelector('subcategory-item');
+        Array.prototype.every.call(subcategories, function (v) {
+          var attr = v.getAttribute('data-index');
+          if (attr === subcategory) {
+            v.className = 'subcategory-item active';
+            return false;
+          }
+          return true;
+        });
+      }
     }
 
     function renderHTML(str) {

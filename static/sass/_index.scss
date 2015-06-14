@@ -116,6 +116,13 @@ header.global.slim {
   background-color: #307D9A;
 }
 
+.find-courses {
+  .category-container {
+    max-width: 1200px;
+    margin: 2em auto 0;
+  }
+}
+
 .category-list {
   list-style: none;
   max-width: 1200px;
@@ -129,9 +136,34 @@ header.global.slim {
     box-sizing: border-box;
     float: left;
     border-right: 1px solid #135871;
+    position: relative;
 
-    &:hover {
+    &:hover, &.active {
       background-color: #135871;
+
+      .subcategory-wrapper {
+        display: block;
+      }
+
+    }
+
+    .subcategory-wrapper {
+      position: absolute;
+      display: none;
+      box-sizing: border-box;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: inline-block;
+          float: left;
+        }
+
+      }
+
     }
 
     a {
