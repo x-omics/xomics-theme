@@ -4,7 +4,18 @@
 
   .course-info {
     header.course-profile {
-      background-image: url('../themes/xomics-theme/images/bg-brain-broken2.jpg') no-repeat !important;
+      background-image: url('../themes/xomics-theme/images/bg-brain-broken.jpg');
+      background-size: cover;
+
+      .intro-inner-wrapper {
+        .intro {
+          .main-cta a.register {
+            background-image: none !important;
+            box-shadow: none;
+          }
+        }
+      }
+
     }
   }
 
