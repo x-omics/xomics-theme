@@ -154,6 +154,7 @@
         var courses = JSON.parse(str);
         var len = courses.length;
         if (!courses || len === 0) {
+          coursesContainer.innerHTML = '<div class="courses-notfound">未找到结果</div>';
           return;
         }
         var _html = '';
