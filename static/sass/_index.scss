@@ -4,6 +4,7 @@ header.global,
 header.global.slim {
   background: url('../themes/xomics-theme/images/back-top.jpg') no-repeat !important;
   background-size: 100% 100% !important;
+  border: none;
 
   .nav-global li a {
     color: white;
@@ -148,7 +149,9 @@ header.global.slim {
 
     &:hover, &.active {
       background-color: $highlightColor;
+    }
 
+    &:hover {
       a {
         background-color: transparent;
       }
@@ -156,7 +159,6 @@ header.global.slim {
       .subcategory-wrapper {
         display: block;
       }
-
     }
 
     .subcategory-wrapper {
@@ -248,7 +250,7 @@ header.global.slim {
           display: inline-block;
           width: 7em;
           height: 7em;
-          line-height: 7em;
+          padding: 38% 1em 0;
           border-radius: 7em;
           background-color: #2280b0;
           text-align: center;
