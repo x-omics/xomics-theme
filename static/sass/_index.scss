@@ -250,6 +250,7 @@ header.global.slim {
           display: inline-block;
           width: 7em;
           height: 7em;
+          box-sizing: border-box;
           padding: 38% 1em 0;
           border-radius: 7em;
           background-color: #2280b0;
