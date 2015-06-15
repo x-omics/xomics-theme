@@ -213,7 +213,7 @@
       xhr.send();
     }
 
-    $('.category-item').on('click', 'a', function (evt) {
+    $('.category-item').on('click', function (evt) {
       var cate = $(this).attr('data-index');
       var _url = '/category_courses?category=' + cate;
       getCourses(_url);
