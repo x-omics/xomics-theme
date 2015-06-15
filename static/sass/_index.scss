@@ -187,6 +187,19 @@ header.global.slim {
           cursor: pointer;
           border-bottom: 1px solid $highlightColor;
 
+          a {
+            color: #222;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+
+            &:hover {
+              color: white;
+              background-color: $highlightColor;
+            }
+
+          }
+
           &:hover {
             color: white;
           }
