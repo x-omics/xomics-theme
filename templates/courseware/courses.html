@@ -35,7 +35,7 @@
   <section class="category-container ">
     <ul class="category-list clearfix">
       <li class="category-item" data-index="certification">
-        <a href="/courses?category=certification">认证培训</a>
+        <a href="javascript:void(0)">认证培训</a>
         <div class="subcategory-wrapper">
           <ul class="subcategory-list clearfix">
             <li class="subcategory-item" data-parent="certification" data-index="hereditary">遗传咨询师</li>
@@ -43,14 +43,14 @@
           </ul>
         </div>
       </li>
-      <li class="category-item">
-        <a href="/courses?category=medihealth">医学健康</a>
+      <li class="category-item" data-index="medihealth">
+        <a href="javascript:void(0)">医学健康</a>
       </li>
-      <li class="category-item">
-        <a href="/courses?category=biology">生物信息</a>
+      <li class="category-item" data-index="biology">
+        <a href="javascript:void(0)">生物信息</a>
       </li>
       <li class="category-item" data-index="others">
-        <a href="/courses?category=others">其它</a>
+        <a href="javascript:void(0)">其它</a>
       </li>
     </ul>
   </section>
@@ -212,6 +212,19 @@
       xhr.open('GET', url);
       xhr.send();
     }
+
+    $('.category-item').on('click', 'a', function (evt) {
+      var cate = $(this).attr('data-index');
+      var _url = '/category_courses?category=' + cate;
+      getCourses(_url);
+    });
+
+    $('.subcategory-item').on('click', function () {
+      var subcate = $(this).attr('data-index');
+      var _url = '/category_courses?subcategory=' + subcate;
+      getCourses(_url);
+    });
+
   })();
 </script>
 </%block>
