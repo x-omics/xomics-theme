@@ -163,7 +163,8 @@ header.global.slim {
       position: absolute;
       display: none;
       box-sizing: border-box;
-      width: 100%;
+      width: 10em;
+      min-width: 140px;
       z-index: 10000;
       background-color: white;
 
@@ -176,6 +177,7 @@ header.global.slim {
         li {
           display: inline-block;
           float: left;
+          font-size: 14px;
           width: 100%;
           height: 2em;
           line-height: 2em;
