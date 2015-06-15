@@ -22,13 +22,13 @@
     <div id="pageBanner" style="position: relative; margin: 0; padding: 0; top: 0; left: 0; width: 1265px; height: 400px;">
       <div data-u="slides" style="position: absolute; cursor: move; left: 0; top: 0; width: 1265px; height: 400px;">
         <div>
-          <img data-u="image" src="${static.url('themes/xomics-theme/images/jd1.jpg')}" alt="Xomics">
+          <img data-u="image" src="${static.url('themes/xomics-theme/images/banner01.jpg')}" alt="Xomics">
         </div>
         <div>
-          <img data-u="image" src="${static.url('themes/xomics-theme/images/jd2.jpg')}" alt="Xomics">
+          <img data-u="image" src="${static.url('themes/xomics-theme/images/banner02.jpg')}" alt="Xomics">
         </div>
         <div>
-          <img data-u="image" src="${static.url('themes/xomics-theme/images/sunrise.jpg')}" alt="Xomics">
+          <img data-u="image" src="${static.url('themes/xomics-theme/images/banner03.jpg')}" alt="Xomics">
         </div>
       </div>
       <div data-u="navigator" class="slider-indicator">
@@ -40,23 +40,20 @@
   </header>
   <section class="category-container">
     <ul class="category-list clearfix">
-      <li class="category-item">
-        <a href="/courses?category=biology">生物</a>
+      <li class="category-item" data-index="certification">
+        <a href="/courses?category=certification">认证培训</a>
+        <div class="subcategory-wrapper">
+          <ul class="subcategory-list clearfix">
+            <li class="subcategory-item" data-parent="certification" data-index="hereditary">遗传咨询师认证</li>
+            <li class="subcategory-item" data-parent="certification" data-index="bioinfo">生物信息分析专业认证</li>
+          </ul>
+        </div>
       </li>
       <li class="category-item">
         <a href="/courses?category=medihealth">医学健康</a>
       </li>
       <li class="category-item">
-        <a href="/courses?category=analysis">数据分析</a>
-      </li>
-      <li class="category-item">
-        <a href="/courses?category=computer">计算机</a>
-      </li>
-      <li class="category-item">
-        <a href="/courses?category=socialsci">社会科学</a>
-      </li>
-      <li class="category-item">
-        <a href="/courses?category=philosophy">伦理哲思</a>
+        <a href="/courses?category=biology">生物信息</a>
       </li>
       <li class="category-item">
         <a href="/courses?category=others">其它</a>
@@ -93,19 +90,10 @@
       <section class="recommand-container">
         <ul class="recommand-list">
           <li class="recommand-list-item">
-            <a href="/courses?category=medihealth&subcategory=hereditary" class="recommand-category">遗传咨询师</a>
+            <a href="/courses?category=medihealth&subcategory=hereditary" class="recommand-category">遗传咨询师认证</a>
           </li>
           <li class="recommand-list-item">
-            <a href="/courses?category=analysis&subcategory=bioinfo" class="recommand-category">生物信息</a>
-          </li>
-          <li class="recommand-list-item">
-            <a href="/courses?category=medihealth&subcategory=hereditary" class="recommand-category">遗传咨询师</a>
-          </li>
-          <li class="recommand-list-item">
-            <a href="/courses?category=medihealth&subcategory=hereditary" class="recommand-category">遗传咨询师</a>
-          </li>
-          <li class="recommand-list-item">
-            <a href="/courses?category=medihealth&subcategory=hereditary" class="recommand-category">遗传咨询师</a>
+            <a href="/courses?category=medihealth&subcategory=bioinfo" class="recommand-category">生物信息分析专业认证</a>
           </li>
         </ul>
       </section>
