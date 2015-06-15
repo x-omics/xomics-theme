@@ -89,6 +89,7 @@
     var subcategory = args['subcategory'];
     var category = args['category'];
     var coursesContainer = document.getElementsByClassName('courses-listing')[0];
+    var noCourses = '<div class="courses-notfound">分类下暂时没有课程</div>';
     if (q) {
       getCoursesBySearch(q);
     } else if (category) {
@@ -154,7 +155,7 @@
         var courses = JSON.parse(str);
         var len = courses.length;
         if (!courses || !Array.isArray(courses) || len === 0) {
-          coursesContainer.innerHTML = '<div class="courses-notfound">未找到结果</div>';
+          coursesContainer.innerHTML = noCourses;
           return;
         }
         var _html = '';
@@ -164,7 +165,7 @@
         coursesContainer.innerHTML = _html;
       } catch (err) {
         console.log(err);
-        coursesContainer.innerHTML = '<div class="courses-notfound">未找到结果</div>';
+        coursesContainer.innerHTML = noCourses;
       }
       function render(course) {
         return '<li class="courses-listing-item">' +
@@ -205,7 +206,7 @@
             renderHTML(result);
           } else {
             // error
-            coursesContainer.innerHTML = '<div class="courses-notfound">未找到结果</div>';
+            coursesContainer.innerHTML = noCourses;
           }
         }
       };
