@@ -213,13 +213,15 @@
       xhr.send();
     }
 
-    $('.category-item').on('click', function (evt) {
+    $('.category-item').on('click', function () {
       var cate = $(this).attr('data-index');
       var _url = '/category_courses?category=' + cate;
       getCourses(_url);
     });
 
-    $('.subcategory-item').on('click', function () {
+    $('.subcategory-item').on('click', function (evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
       var subcate = $(this).attr('data-index');
       var _url = '/category_courses?subcategory=' + subcate;
       getCourses(_url);
