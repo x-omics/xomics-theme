@@ -1,0 +1,7 @@
+        <form action="${action}" method="post">
+            % for pk, pv in params.iteritems():
+                <input type="hidden" name="${pk}" value="${pv}" />
+            % endfor
+
+                <i class="icon fa fa-caret-right"></i><input type="submit" value="支付"/>
+        </form>
