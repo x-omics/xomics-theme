@@ -1,0 +1,51 @@
+
+@import "xomics-constant";
+
+.bank-info-wrapper {
+
+  box-sizing: border-box;
+  border-top: 1px solid #106A86;
+  margin: 0;
+  padding: 0;
+
+  .bank-hint {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  .bank-info-title {
+    text-align: center;
+    color: $main-color;
+  }
+
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+
+    .bank-cell {
+      display: inline-block;
+    }
+
+    .row {
+      .bank-cell-label {
+        width: 10%;
+        max-width: 7em;
+        min-width: 5em;
+        text-align: right;
+      }
+      .bank-cell-value {
+        width: 80%;
+      }
+    }
+  }
+
+  .bank-info-alert {
+    color: #FF3833;
+  }
+
+}
+
+
+
+
+
