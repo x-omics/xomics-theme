@@ -11,22 +11,30 @@
   .bank-hint {
     font-size: 1.1em;
     font-weight: 600;
+    margin: 1em 0;
   }
 
   .bank-info-title {
     text-align: center;
-    color: $main-color;
+    span {
+      color: $main-color;
+      font-size: 1.2em;
+    }
   }
 
   .container {
     box-sizing: border-box;
     width: 100%;
+    margin: 0;
+    border: 1px solid #BBB;
+    padding: 1em 0;
 
     .bank-cell {
       display: inline-block;
     }
 
     .row {
+      margin-top: 0.5em;
       .bank-cell-label {
         width: 10%;
         max-width: 7em;
@@ -35,12 +43,16 @@
       }
       .bank-cell-value {
         width: 80%;
+        box-sizing: border-box;
+        padding-left: 1em;
       }
     }
   }
 
   .bank-info-alert {
     color: #FF3833;
+    margin-top: 1em;
+    padding-left: 3em;
   }
 
 }
