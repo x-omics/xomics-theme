@@ -17,7 +17,6 @@
   .bank-info-title {
     text-align: center;
     span {
-      color: $main-color;
       font-size: 1.2em;
     }
   }
@@ -40,6 +39,7 @@
         max-width: 7em;
         min-width: 5em;
         text-align: right;
+        font-weight: bold;
       }
       .bank-cell-value {
         width: 80%;
