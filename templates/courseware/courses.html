@@ -168,23 +168,19 @@
       }
     }
 
-    function renderHTML(str) {
-      try {
-        var courses = JSON.parse(str);
-        var len = courses.length;
-        if (!courses || !Array.isArray(courses) || len === 0) {
-          coursesContainer.innerHTML = err_NoCourses;
-          return;
-        }
-        var _html = '';
-        for (var i = 0; i < len; i++) {
-          _html += render(courses[i]);
-        }
-        coursesContainer.innerHTML = _html;
-      } catch (err) {
-        console.log(err);
+    function renderHTML(courses) {
+
+      var len = courses.length;
+      if (!courses || !Array.isArray(courses) || len === 0) {
         coursesContainer.innerHTML = err_NoCourses;
+        return;
       }
+      var _html = '';
+      for (var i = 0; i < len; i++) {
+        _html += render(courses[i]);
+      }
+
+      coursesContainer.innerHTML = _html;
       function render(course) {
         return '<li class="courses-listing-item">' +
                 '<article class="course" id="' + course.id + '" role="region" aria-label="'+ course.title +'">' +
@@ -221,14 +217,19 @@
           if (xhr.status >= 200 && xhr.status < 400) {
             // result
             var result = xhr.responseText;
-            if (!result) {
-              if (isSearch) {
-                coursesContainer.innerHTML = err_SearchNotFound;
+            try {
+              result = JSON.parse(result);
+              if (!result || result.length < 1) {
+                if (isSearch) {
+                  coursesContainer.innerHTML = err_SearchNotFound;
+                } else {
+                  coursesContainer.innerHTML = err_NoCourses;
+                }
               } else {
-                coursesContainer.innerHTML = err_NoCourses;
+                renderHTML(result);
               }
-            } else {
-              renderHTML(result);
+            } catch (err) {
+              coursesContainer.innerHTML = err_ServerError;
             }
           } else if (xhr.status < 500) {
             coursesContainer.innerHTML = err_RequestError;
