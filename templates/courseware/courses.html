@@ -93,7 +93,10 @@
     var subcategory = args['subcategory'];
     var category = args['category'];
     var coursesContainer = document.getElementsByClassName('courses-listing')[0];
-    var noCourses = '<div class="courses-notfound">分类下暂时没有课程</div>';
+    var err_NoCourses = '<div class="courses-notfound">分类下暂时没有课程</div>';
+    var err_SearchNotFound = '<div class="courses-notfound">暂时没有相关课程</div>';
+    var err_RequestError = '<div class="courses-notfound">请求出错了...</div>';
+    var err_ServerError = '<div class="courses-notfound">服务器出错了，请稍候再试...</div>';
     var searchBtn = document.getElementById('searchBtn');
     var searchInput = document.getElementById('courseSearch');
 
@@ -113,7 +116,7 @@
 
     function getCoursesBySearch(str) {
       var _url = '/search_courses?q=' + str;
-      getCourses(_url);
+      getCourses(_url, true);
     }
 
     function getCoursesByCategory(category, subcategory) {
@@ -128,7 +131,7 @@
       if (subcategory) {
         _url = _url + '&subcategory=' + subcategory;
       }
-      getCourses(_url);
+      getCourses(_url, false);
     }
 
     function clearHighlight() {
@@ -169,8 +172,8 @@
       try {
         var courses = JSON.parse(str);
         var len = courses.length;
-        if (!courses || !$.isArray(courses) || len === 0) {
-          coursesContainer.innerHTML = noCourses;
+        if (!courses || !Array.isArray(courses) || len === 0) {
+          coursesContainer.innerHTML = err_NoCourses;
           return;
         }
         var _html = '';
@@ -180,7 +183,7 @@
         coursesContainer.innerHTML = _html;
       } catch (err) {
         console.log(err);
-        coursesContainer.innerHTML = noCourses;
+        coursesContainer.innerHTML = err_NoCourses;
       }
       function render(course) {
         return '<li class="courses-listing-item">' +
@@ -211,7 +214,7 @@
       }
     }
 
-    function getCourses(url) {
+    function getCourses(url, isSearch) {
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
@@ -219,13 +222,18 @@
             // result
             var result = xhr.responseText;
             if (!result) {
-              coursesContainer.innerHTML = noCourses;
+              if (isSearch) {
+                coursesContainer.innerHTML = err_SearchNotFound;
+              } else {
+                coursesContainer.innerHTML = err_NoCourses;
+              }
             } else {
               renderHTML(result);
             }
+          } else if (xhr.status < 500) {
+            coursesContainer.innerHTML = err_RequestError;
           } else {
-            // error
-            coursesContainer.innerHTML = noCourses;
+            coursesContainer.innerHTML = err_ServerError;
           }
         }
       };

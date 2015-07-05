@@ -324,6 +324,11 @@ $normalColor: #307D9A;
     &:hover {
       background-color: $highlightColor;
     }
+
+    &:active, &:focus {
+      box-shadow: none;
+      outline: none;
+    }
   }
 }
 
