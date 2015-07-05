@@ -170,6 +170,8 @@ header.global.slim {
   }
 }
 
+$barHeight: 2.7em;
+
 .category-list {
 
   $highlightColor: #135871;
@@ -180,6 +182,8 @@ header.global.slim {
   margin: 0 auto;
   padding: 0px;
   box-sizing: border-box;
+  float: left;
+  height: $barHeight;
 
   li {
     display: inline-block;
@@ -210,6 +214,8 @@ header.global.slim {
       z-index: 10000;
       background-color: white;
 
+      $subColumnHeight: 2.4em;
+
       ul {
         list-style: none;
         margin: 0;
@@ -221,8 +227,8 @@ header.global.slim {
           float: left;
           font-size: 14px;
           width: 100%;
-          height: 2em;
-          line-height: 2em;
+          height: $subColumnHeight;
+          line-height: $subColumnHeight;
           text-align: center;
           cursor: pointer;
           border-bottom: 1px solid $highlightColor;
@@ -230,8 +236,8 @@ header.global.slim {
           a {
             color: #222;
             width: 100%;
-            height: 100%;
-            line-height: 2em;
+            height: $subColumnHeight;
+            line-height: $subColumnHeight;
             background-color: white;
             font-size: 14px;
 
@@ -249,11 +255,8 @@ header.global.slim {
           &:last-child {
             border-bottom: none;
           }
-
         }
-
       }
-
     }
 
     a {
@@ -263,8 +266,8 @@ header.global.slim {
       letter-spacing: 2px;
       background-color: $normalColor;
       color: white;
-      height: 2.7em;
-      line-height: 2.7em;
+      height: $barHeight;
+      line-height: $barHeight;
       overflow: hidden;
       text-align: center;
       &:hover {
@@ -273,6 +276,36 @@ header.global.slim {
       }
     }
 
+  }
+
+}
+
+.course-search {
+
+  float: right;
+  height: $barHeight;
+  line-height: $barHeight;
+
+  #courseSearch {
+    padding: 6px 15px 6px 30px;
+    margin: 3px;
+    background: url("../themes/xomics-theme/images/search.png") no-repeat 8px 6px;
+  }
+
+  input[type=button], input[type=button]:hover {
+    position:relative;
+    left:-6px;
+    border:1px solid #adc5cf;
+    background: #e4f1f9; /* Old browsers */
+    background: -moz-linear-gradient(top, #e4f1f9 0%, #d5e7f3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f1f9), color-stop(100%,#d5e7f3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* IE10+ */
+    background: linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f1f9', endColorstr='#d5e7f3',GradientType=0 ); /* IE6-9 */
+    color:#7da2aa;
+    cursor: pointer;
   }
 
 }

@@ -32,7 +32,7 @@
 %>
 
 <section class="find-courses">
-  <section class="category-container ">
+  <section class="category-container clearfix">
     <ul class="category-list clearfix">
       <li class="category-item" data-index="certification">
         <a href="javascript:void(0)">认证培训</a>
@@ -53,6 +53,10 @@
         <a href="javascript:void(0)">其它</a>
       </li>
     </ul>
+    <span class="course-search">
+      <input type="text" id="courseSearch"/>
+      <input type="button" value="搜索" id="searchBtn"/>
+    </span>
   </section>
   <section class="courses-container">
     <section class="courses">
@@ -154,7 +158,7 @@
       try {
         var courses = JSON.parse(str);
         var len = courses.length;
-        if (!courses || !Array.isArray(courses) || len === 0) {
+        if (!courses || !$.isArray(courses) || len === 0) {
           coursesContainer.innerHTML = noCourses;
           return;
         }
@@ -203,7 +207,11 @@
           if (xhr.status >= 200 && xhr.status < 400) {
             // result
             var result = xhr.responseText;
-            renderHTML(result);
+            if (!result) {
+              coursesContainer.innerHTML = noCourses;
+            } else {
+              renderHTML(result);
+            }
           } else {
             // error
             coursesContainer.innerHTML = noCourses;
