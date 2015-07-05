@@ -298,6 +298,7 @@ $normalColor: #307D9A;
     border-radius: 0px;
     background-color: #eee;
     border-color: #eee;
+    font-style: normal;
 
     &:focus {
       box-shadow: none;
@@ -308,15 +309,19 @@ $normalColor: #307D9A;
 
   input[type=button], input[type=button]:hover {
     border:1px solid #eee;
+    border-radius: 0px;
     color: white;
     cursor: pointer;
     margin: 4px 0;
     box-shadow: none;
     text-shadow: none;
-    background-color: $normalColor;
   }
 
   #searchBtn {
+    background-image: none;
+    background-color: $normalColor;
+    position: relative;
+    left: -6px;
     &:hover {
       background-color: $highlightColor;
     }
