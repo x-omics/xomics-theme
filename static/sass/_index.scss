@@ -288,11 +288,10 @@ $normalColor: #307D9A;
   float: right;
   height: $barHeight;
   line-height: $barHeight;
-  margin-right: 1.5em;
 
   #courseSearch {
     padding: 6px 15px 6px 30px;
-    margin: 4px;
+    margin: 4px 0;
     background: url("../themes/xomics-theme/images/search.png") no-repeat 8px 6px;
     box-shadow: none;
     border-radius: 0px;

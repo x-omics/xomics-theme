@@ -94,6 +94,17 @@
     var category = args['category'];
     var coursesContainer = document.getElementsByClassName('courses-listing')[0];
     var noCourses = '<div class="courses-notfound">分类下暂时没有课程</div>';
+    var searchBtn = document.getElementById('searchBtn');
+    var searchInput = document.getElementById('courseSearch');
+
+    searchBtn.addEventListener('click', function () {
+      var val = searchInput.value;
+      if (!val) {
+        return;
+      }
+      getCoursesBySearch(val);
+    });
+
     if (q) {
       getCoursesBySearch(q);
     } else if (category) {
