@@ -171,11 +171,11 @@ header.global.slim {
 }
 
 $barHeight: 2.7em;
+$highlightColor: #135871;
+$normalColor: #307D9A;
+
 
 .category-list {
-
-  $highlightColor: #135871;
-  $normalColor: #307D9A;
 
   list-style: none;
   max-width: 1200px;
@@ -190,6 +190,7 @@ $barHeight: 2.7em;
     box-sizing: border-box;
     float: left;
     position: relative;
+    height: $barHeight;
 
     &:hover, &.active {
       background-color: $highlightColor;
@@ -213,6 +214,7 @@ $barHeight: 2.7em;
       min-width: 150px;
       z-index: 10000;
       background-color: white;
+      top: $barHeight;
 
       $subColumnHeight: 2.4em;
 
@@ -221,6 +223,7 @@ $barHeight: 2.7em;
         margin: 0;
         padding: 0;
         border: 1px solid $highlightColor;
+        border-top: none;
 
         li {
           display: inline-block;
@@ -285,29 +288,39 @@ $barHeight: 2.7em;
   float: right;
   height: $barHeight;
   line-height: $barHeight;
+  margin-right: 1.5em;
 
   #courseSearch {
     padding: 6px 15px 6px 30px;
-    margin: 3px;
+    margin: 4px;
     background: url("../themes/xomics-theme/images/search.png") no-repeat 8px 6px;
+    box-shadow: none;
+    border-radius: 0px;
+    background-color: #eee;
+    border-color: #eee;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+
   }
 
   input[type=button], input[type=button]:hover {
-    position:relative;
-    left:-6px;
-    border:1px solid #adc5cf;
-    background: #e4f1f9; /* Old browsers */
-    background: -moz-linear-gradient(top, #e4f1f9 0%, #d5e7f3 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f1f9), color-stop(100%,#d5e7f3)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* IE10+ */
-    background: linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f1f9', endColorstr='#d5e7f3',GradientType=0 ); /* IE6-9 */
-    color:#7da2aa;
+    border:1px solid #eee;
+    color: white;
     cursor: pointer;
+    margin: 4px 0;
+    box-shadow: none;
+    text-shadow: none;
+    background-color: $normalColor;
   }
 
+  #searchBtn {
+    &:hover {
+      background-color: $highlightColor;
+    }
+  }
 }
 
 .courses-container {
