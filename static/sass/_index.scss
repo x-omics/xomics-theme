@@ -157,11 +157,17 @@ header.global.slim {
   background-color: #307D9A;
 }
 
+.category-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .find-courses {
   .category-container {
     max-width: 1200px;
     margin: 2em auto 0;
   }
+
   .category-list {
     border: none;
   }
